@@ -8,6 +8,7 @@ eine neue Version auf dem Server deployt.
 1. Installiere Docker, Python und Pip
 2. Installiere die Python Abhängigkeiten mit `pip install -r requirements.txt`
 3. Starte die Anwendung mit `python app.py`
+4. Öffne die Anwendung im Browser unter `http://127.0.0.1:5000/`
 
 ### Docker
 1. Starte die Anwendung mit `docker-compose up -d` (startet die Anwendung und eine Datenbank)
