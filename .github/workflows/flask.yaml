@@ -15,10 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t flask-app .
-
-      - name: Delete existing Docker container
-        run: docker rm -f flask-app || true
+        run: docker compose build
 
       - name: Run Docker container
-        run: docker run -d -p 80:5000 --name flask-app flask-app
+        run: docker compose up -d

@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  web:
+    container_name: flask_app
+    build: .
+    ports:
+      - "80:5000"
+    volumes:
+      - .:/code
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres
+    image: postgres:12.1-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+volumes:
+    postgres_data:
+      driver: local
